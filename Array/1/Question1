@@ -4,3 +4,10 @@ input=>
 	- Positive numers will be within length of array +venum <= length(arr)
 output=>
 	- Array containing ascending ordered positive numbers and first missing positive number
+	
+Example 1: 
+Input
+[4,1,2,5,4,-8,-5,7,9]
+Output
+[1,2,3,4,5,-8,7,-5,9]
+6
