@@ -1,0 +1,6 @@
+Given an array find the first missing positive number and arrange the positive number alone till we get the missing positive number (inplace)
+input=>
+	- Array can contain -ve and +ve number 
+	- Positive numers will be within length of array +venum <= length(arr)
+output=>
+	- Array containing ascending ordered positive numbers and first missing positive number
