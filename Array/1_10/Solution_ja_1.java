@@ -2,32 +2,25 @@ import java.util.*;
 
 public class Main {
     private int[] sortTillMissingPositiveNumber(int[] arr){
-        int pos=1, maxPositive=0;
-        int[] result=new int[arr.length];
-        while(pos<arr.length){
+        int positive=1, maxPositive=0;
+        int position=0;
+        while(positive<=arr.length){
             boolean isPresent=false;
             for(int i=0;i<arr.length;i++){
-                if(pos==arr[i]){
+                if(positive==arr[i]){
                     isPresent=true;
-                    pos++;
+                    int temp=arr[i];
+                    arr[i]=arr[position];
+                    arr[position++]=temp;
+                    positive++;
+                    maxPositive= positive;
                     break;
                 }
             }if(!isPresent){
-                maxPositive= pos;
-                pos=arr.length;
+                positive=arr.length+1;
             }
         }System.out.println(maxPositive==0?1:maxPositive);
-        int i;
-        for(i=0;i<maxPositive-1;i++){
-            result[i]=i+1;
-        }
-        
-        for(int j=0;j<arr.length;j++){
-            if(arr[j]<=0||arr[j]>maxPositive){
-                result[i++]=arr[j];
-            }
-        }
-        return result;
+        return arr;
     }
     public static void main(String[] args) {
         int n;
