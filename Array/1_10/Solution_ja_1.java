@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class Main{
     private int[] sortTillMissingPositiveNumber(int[] arr){
         int positive=1, maxPositive=0;
         int position=0;
