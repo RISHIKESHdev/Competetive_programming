@@ -1,8 +1,8 @@
 import java.util.*;
 
-public class Main{
+public class Main {
     private int[] sortTillMissingPositiveNumber(int[] arr){
-        int positive=1, maxPositive=0;
+        int positive=1;
         int position=0;
         while(positive<=arr.length){
             boolean isPresent=false;
@@ -13,13 +13,12 @@ public class Main{
                     arr[i]=arr[position];
                     arr[position++]=temp;
                     positive++;
-                    maxPositive= positive;
                     break;
                 }
             }if(!isPresent){
-                positive=arr.length+1;
+                break;
             }
-        }System.out.println(maxPositive==0?1:maxPositive);
+        }System.out.println(positive);
         return arr;
     }
     public static void main(String[] args) {
