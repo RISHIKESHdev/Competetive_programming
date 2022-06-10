@@ -4,16 +4,17 @@ public class Main {
     private int twoSum(int[] arr){
         int cost=0;
         int len=arr.length;
-        while(len>2){
-            if(arr[len-1]>arr[len-2]){
-                len--;
-            }
-            if(arr[len-1]<arr[len-2]){
+        while(len>1){
+            if(arr[len-2]>arr[len-1]){
                 cost+=arr[len-1];
+                len--;
             }else{
                 cost+=arr[len-2];
+                len--;
             }
-            len--;
+            if(arr[len-2]<arr[len-1]){
+                len--;
+            }
         }return cost;
     }
     public static void main(String[] args) {
