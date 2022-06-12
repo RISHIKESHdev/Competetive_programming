@@ -1,23 +1,19 @@
 arr = [ int(x.strip()) for x in input().split(",")]
 i=0
 area=0
-while True:
-    if i+1<len(arr) and not(arr[i]==0 and i==0 ):
-        for j in arr[i+1:]:
-            if(j>=arr[i] and arr[i+1:].index(j)!=0):
-                area+=(arr[i]*(arr[i+1:].index(j)))
-                area-=sum([k for k in arr[i+1:arr[i+1:].index(j)+i+1]])
-                i=arr[i+1:].index(j)+i+1
+while i<len(arr)-1:
+    i+=1 if(arr[i]==0 and i==0 ) else i
+    for j in range(i+1,len(arr[i+1:])+i+1):
+        if(j>i ):
+            if(arr[j]>=arr[i]):
+                area+=arr[i]*(j-i-1)
+                area-=sum([n for n in arr[i+1:j]])
+                i=j
+            elif(i<len(arr) and arr[i]>max(arr[i+1:])):
+                j=arr[i+1:].index(max(arr[i+1:]))
+                area+=arr[i+1+j]*(j)
+                area-=sum([m for m in arr[i+1:j+i+1]])
+                i+=j+1
+            if(i>=len(arr)-1):
                 break
-            elif(j<=arr[i]):
-                if (arr[i]>max(arr[i+1:])):
-                    i+=1
-                pass
-            else:
-                pass
-    elif(i<len(arr)):
-        i+=1
-        pass
-    else:
-        break
-print(area) 
+print(area)
