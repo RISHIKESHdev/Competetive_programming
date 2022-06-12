@@ -14,9 +14,7 @@ class Solution {
             
             if(count1==count2){
                 end=i;
-                for(int j=start+1;j<end;j++){
-                    str.append(s.charAt(j));
-                }
+                str.append(s.substring(start+1,end));
                 start=end+1;
                 count1=0;count2=0;
             }
