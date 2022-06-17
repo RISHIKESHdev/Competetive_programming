@@ -34,3 +34,6 @@ Constraints:
 
 1 <= arr.length <= 100
 1 <= arr[i] <= 1000
+
+
+***Try solving it in linear time***
