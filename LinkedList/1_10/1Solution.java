@@ -10,26 +10,25 @@
  */
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        StringBuilder s=new StringBuilder();
-        while(l1!=null){
-            s.append(Integer.valueOf(l1.val));
-            l1=l1.next;
-        }
-        long num1=Long.parseLong(s.reverse().toString());
-        s=new StringBuilder();
-        while(l2!=null){
-            s.append(Integer.valueOf(l2.val));
-            l2=l2.next;
-        }
-        long num2=Long.parseLong(s.reverse().toString());
-        long sum=num1+num2;
         ListNode node=new ListNode(0);
         ListNode result=node;
-        while(sum>0){
-            node.next=new ListNode((int)(sum%10));
-            sum/=10;
+        int carry=0;
+        while(l1!=null||l2!=null){
+            int num1=(l1!=null)?l1.val:0;
+            int num2=(l2!=null)?l2.val:0;
+            carry=carry+num1+num2;
+            node.next=new ListNode(carry%10);
             node=node.next;
+            carry/=10;
+            if(l1!=null)
+                l1=l1.next;
+            if(l2!=null)
+                l2=l2.next;
         }
-        return (num1+num2==0)?result:result.next;
+        if(carry>0)
+            node.next=new ListNode(carry);
+        
+        return result.next;
+            
     }
 }
