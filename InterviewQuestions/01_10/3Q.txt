@@ -1,0 +1,14 @@
+Return true if the given number is a mononumber. Else return false.
+
+Example 1
+input: "725463"
+output: true
+Explanation: The given number can be converted to "999" by summing up the pairs of numbers.
+
+Example 2
+input: "211"
+output: true, it can be converted to "22"
+
+Example 3
+input: "31113"
+output: false, you can only sum up to a max of two consecutive digits.
