@@ -11,3 +11,4 @@ def firstMissingPositive(nums):
                 return i
         return n
 nums = [ int(x.strip()) for x in input().split(",")]
+print(firstMissingPositive(nums))
