@@ -17,3 +17,4 @@ def shortestPathBinaryMatrix(grid):
                     queue.append((length+1, new_row, new_col))
                     visited.add((new_row, new_col))
         return -1
+print(shortestPathBinaryMatrix([[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]))
