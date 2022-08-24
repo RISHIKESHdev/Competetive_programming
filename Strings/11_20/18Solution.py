@@ -7,3 +7,4 @@ def groupAnagrams(strs):
             res[tuple(count)].append(s)
         return res.values()
 groupAnagrams([input() for _ in range(int(input()))])
+#hi
