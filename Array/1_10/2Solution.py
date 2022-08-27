@@ -8,7 +8,7 @@ def findTwoSum(nums, target):
     d[nums[i]] = i
 arr = [ int(x.strip()) for x in input().split(",")]
 target=int(input())
-print(findTwoSum(arr, target));
+print(findTwoSum(arr, target))
 
 # def findTwoSum(nums, target):
 #   try:

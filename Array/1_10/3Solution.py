@@ -1,4 +1,4 @@
-def leastcostStair(arr):
+def minCostClimbingStairs(arr):
     n=len(arr)
     db=[None]*n
     return (min(costStair(n-1,arr,db),costStair(n-2,arr,db)))
@@ -13,4 +13,4 @@ def costStair(n,arr,db):
     ab=arr[n]+min(costStair(n-1,arr,db),costStair(n-2,arr,db))
     return (ab)
 arr = [ int(x.strip()) for x in input().split(",")]
-print(leastcostStair(arr))
+print(minCostClimbingStairs(arr))
